@@ -1,7 +1,0 @@
-{
-  "targets": {
-    "Used::M": [],
-    // "CommentedOutFunc": [],
-    "TestUnusedFuncs": []
-  }
-}
