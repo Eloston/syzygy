@@ -16,6 +16,9 @@
   'variables': {
     'chromium_code': 1,
   },
+  'includes': [
+    '../syzygy.gypi',
+  ],
   'targets': [
     {
       'target_name': 'syzygy_version',
@@ -35,13 +38,13 @@
             'version.gen.template',
           ],
           'outputs': [
-            '<(SHARED_INTERMEDIATE_DIR)/syzygy/version/version.gen',
+            '<(intermediate_dir)/syzygy/version/version.gen',
           ],
           'action': [
             '<(python_exe)',
             '<(src)/syzygy/build/template_replace.py',
             '--input', 'version.gen.template',
-            '--output', '<(SHARED_INTERMEDIATE_DIR)/syzygy/version/version.gen',
+            '--output', '<(intermediate_dir)/syzygy/version/version.gen',
             '<(src)/syzygy/SYZYGY_VERSION',
             '<(src)/syzygy/build/LASTCHANGE.gen',
           ],
@@ -50,7 +53,7 @@
       ],
       'all_dependent_settings': {
         'include_dirs': [
-          '<(SHARED_INTERMEDIATE_DIR)',
+          '<(intermediate_dir)',
         ],
       },
     },

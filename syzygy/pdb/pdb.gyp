@@ -16,6 +16,9 @@
   'variables': {
     'chromium_code': 1,
   },
+  'includes': [
+    '../syzygy.gypi',
+  ],
   'targets': [
     {
       'target_name': 'pdb_lib',

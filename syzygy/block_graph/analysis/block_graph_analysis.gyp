@@ -16,6 +16,9 @@
   'variables': {
     'chromium_code': 1,
   },
+  'includes': [
+    '../../syzygy.gypi',
+  ],
   'targets': [
     {
       'target_name': 'block_graph_analysis_lib',

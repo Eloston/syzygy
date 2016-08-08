@@ -25,6 +25,9 @@
       }],
     ],
   },
+  'includes': [
+    '../syzygy.gypi',
+  ],
   'targets': [
     {
       # This target serves the purpose of making it easy to
@@ -34,7 +37,7 @@
       # We copy the msdiaXXX.dll into the build directory for convenience.
       'copies': [
         {
-          'destination': '<(PRODUCT_DIR)',
+          'destination': '<(output_dir)',
           'files': [
             '<(dia_sdk_dir)/bin/<(dia_sdk_dll)',
           ],

@@ -6,7 +6,7 @@
     'chromium_code': 1,
   },
   'includes': [
-    '../../build/common.gypi',
+    '../../syzygy/syzygy.gypi',
   ],
   'target_defaults': {
     'include_dirs': [
@@ -43,14 +43,14 @@
           'action_name': 'make_pcre_chartables',
           'msvs_cygwin_shell': 0,
           'inputs': [
-            '<(PRODUCT_DIR)/dftables_exe.exe',
+            '<(output_dir)/dftables_exe.exe',
           ],
           'outputs': [
-            '<(SHARED_INTERMEDIATE_DIR)/pcre_chartables.c',
+            '<(intermediate_dir)pcre_chartables.c',
           ],
           'action': [
-            '<(PRODUCT_DIR)/dftables_exe.exe',
-            '<(SHARED_INTERMEDIATE_DIR)/pcre_chartables.c',
+            '<(output_dir)/dftables_exe.exe',
+            '<(intermediate_dir)/pcre_chartables.c',
           ],
         },
       ],
@@ -89,7 +89,7 @@
         'files/pcreposix.c',
         'files/pcreposix.h',
         'files/ucp.h',
-        '<(SHARED_INTERMEDIATE_DIR)/pcre_chartables.c',
+        '<(intermediate_dir)/pcre_chartables.c',
         # C plusplus sourcews
         'files/pcrecpp.cc',
         'files/pcre_scanner.cc',

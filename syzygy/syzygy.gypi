@@ -22,20 +22,22 @@
 
     # Make sure we use the bundled version of python rather than any others
     # installed on the system,
-    'python_exe': '<(DEPTH)/syzygy/build/python26.bat',
+    'python_exe': 'python',
 
     # This allows us to decouple the repository root from '<(DEPTH)', as
     # the relative depth of a pure git repository and an SVN repository
     # is different.
-    'src': '<(DEPTH)',
+    'src': 'third_party/syzygy',
 
     # Remove the base/build dependency on the existence of a chrome/VERSION
     # file.
-    'test_isolation_mode': 'noop',
+    #'test_isolation_mode': 'noop',
 
-    'output_dir_prefix': 'out',
+    'output_dir': '<(src)/binaries/exe',
 
-    'msvs_xtree_patched%': '0',
+    'intermediate_dir': '<(src)/binaries/intermediate',
+
+    #'msvs_xtree_patched%': '0',
 
     # The current PGO phase. 0 means that the PGO is disabled, 1 should be used
     # for the instrumentation phase and 2 is for the optimization one. The
@@ -49,8 +51,11 @@
   },
   'target_defaults': {
     'include_dirs': [
-      '<(DEPTH)',
+      '<(src)',
     ],
+    'msvs_configuration_attributes': {
+      'OutputDirectory': '<(output_dir)',
+    },
     'msvs_settings': {
       'VCCLCompilerTool': {
         # See http://msdn.microsoft.com/en-us/library/aa652260(v=vs.71).aspx
@@ -88,7 +93,7 @@
         'defines': [
           # This global define is in addition to _DEBUG.
           '_COVERAGE_BUILD',
-          'BUILD_OUTPUT_DIR="<(output_dir_prefix)/Coverage"',
+          'BUILD_OUTPUT_DIR="<(output_dir)"',
           # Turn off iterator debugging for coverage, as it slows down
           # all iterator-related operations without improving coverage.
           '_HAS_ITERATOR_DEBUGGING=0',
@@ -110,7 +115,7 @@
       },
       'Release': {
         'defines': [
-          'BUILD_OUTPUT_DIR="<(output_dir_prefix)/Release"',
+          'BUILD_OUTPUT_DIR="<(output_dir)"',
         ],
         'conditions': [
           # We up the level of optimizations for official builds.
@@ -151,12 +156,12 @@
       },
       'Debug': {
         'defines': [
-          'BUILD_OUTPUT_DIR="<(output_dir_prefix)/Debug"',
+          'BUILD_OUTPUT_DIR="<(output_dir)"',
          ],
       },
       'Debug_x64': {
         'defines': [
-          'BUILD_OUTPUT_DIR="<(output_dir_prefix)/Debug_x64"',
+          'BUILD_OUTPUT_DIR="<(output_dir)"',
          ],
       },
       'Release_x64': {
