@@ -68,7 +68,7 @@
         '<(src)/syzygy/core/core.gyp:core_lib',
         '<(DEPTH)/base/base.gyp:base',
         '<(DEPTH)/base/base.gyp:test_support_base',
-        '<(src)/testing/gtest.gyp:gtest',
+        #'<(src)/testing/gtest.gyp:gtest',
       ],
     },
   ],

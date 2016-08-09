@@ -83,7 +83,7 @@
         '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/syzygy/core/core.gyp:core_lib',
         '<(src)/syzygy/core/core.gyp:core_unittest_utils',
-        '<(src)/testing/gtest.gyp:gtest',
+        #'<(src)/testing/gtest.gyp:gtest',
       ],
     },
   ],

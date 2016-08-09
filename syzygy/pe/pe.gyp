@@ -220,8 +220,8 @@
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/syzygy/common/common.gyp:common_unittest_utils',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_unittest_lib',
-        '<(src)/testing/gmock.gyp:gmock',
-        '<(src)/testing/gtest.gyp:gtest',
+        #'<(src)/testing/gmock.gyp:gmock',
+        #'<(src)/testing/gtest.gyp:gtest',
       ],
     },
     {
@@ -288,8 +288,8 @@
         '<(src)/syzygy/test_data/test_data.gyp:copy_test_dll_compilands',
         '<(src)/syzygy/test_data/test_data.gyp:signed_test_dll',
         '<(src)/syzygy/testing/testing.gyp:testing_lib',
-        '<(src)/testing/gmock.gyp:gmock',
-        '<(src)/testing/gtest.gyp:gtest',
+        #'<(src)/testing/gmock.gyp:gmock',
+        #'<(src)/testing/gtest.gyp:gtest',
       ],
     },
     {

@@ -72,7 +72,7 @@
       ],
       'dependencies': [
         'pdb_lib',
-        '<(src)/testing/gtest.gyp:gtest',
+        #'<(src)/testing/gtest.gyp:gtest',
       ],
     },
     {
@@ -103,8 +103,8 @@
         '<(src)/syzygy/core/core.gyp:core_unittest_utils',
         '<(src)/syzygy/pe/pe.gyp:pe_unittest_utils',
         '<(src)/syzygy/test_data/test_data.gyp:copy_test_dll',
-        '<(src)/testing/gmock.gyp:gmock',
-        '<(src)/testing/gtest.gyp:gtest',
+        #'<(src)/testing/gmock.gyp:gmock',
+        #'<(src)/testing/gtest.gyp:gtest',
       ],
       'libraries': [
         'imagehlp.lib',

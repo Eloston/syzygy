@@ -71,7 +71,7 @@
       'dependencies': [
         'core_lib',
         '<(DEPTH)/base/base.gyp:base',
-        '<(src)/testing/gtest.gyp:gtest',
+        #'<(src)/testing/gtest.gyp:gtest',
       ],
     },
     {
@@ -101,8 +101,8 @@
         '<(DEPTH)/base/base.gyp:base',
         '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/syzygy/assm/assm.gyp:assm_unittest_utils',
-        '<(src)/testing/gmock.gyp:gmock',
-        '<(src)/testing/gtest.gyp:gtest',
+        #'<(src)/testing/gmock.gyp:gmock',
+        #'<(src)/testing/gtest.gyp:gtest',
         '<(src)/third_party/distorm/distorm.gyp:distorm',
         '<(src)/third_party/zlib/zlib.gyp:zlib',
       ],
