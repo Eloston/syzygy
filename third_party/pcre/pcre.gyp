@@ -46,7 +46,7 @@
             '<(output_dir)/dftables_exe.exe',
           ],
           'outputs': [
-            '<(intermediate_dir)pcre_chartables.c',
+            '<(intermediate_dir)/pcre_chartables.c',
           ],
           'action': [
             '<(output_dir)/dftables_exe.exe',
