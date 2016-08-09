@@ -38,8 +38,8 @@
       ],
       'dependencies': [
         'common_rpc_lib',
-        'base/base.gyp:base',
-        'base/base.gyp:test_support_base',
+        '<(DEPTH)/base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/testing/gtest.gyp:gtest',
       ],
     },

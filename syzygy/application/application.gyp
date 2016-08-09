@@ -29,7 +29,7 @@
         'application_impl.h',
       ],
       'dependencies': [
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/syzygy/version/version.gyp:version_lib',
       ],
@@ -48,8 +48,8 @@
       'dependencies': [
         'application_lib',
         '<(src)/syzygy/common/common.gyp:common_unittest_utils',
-        'base/base.gyp:base',
-        'base/base.gyp:test_support_base',
+        '<(DEPTH)/base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/testing/gmock.gyp:gmock',
         '<(src)/testing/gtest.gyp:gtest',
       ],

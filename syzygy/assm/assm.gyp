@@ -38,7 +38,7 @@
         'value_base.h',
       ],
       'dependencies': [
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
         '<(src)/syzygy/common/common.gyp:common_lib',
       ],
     },
@@ -50,7 +50,7 @@
         'unittest_util.h',
       ],
       'dependencies': [
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
       ],
     },
     {
@@ -66,8 +66,8 @@
         'assm_lib',
         'assm_unittest_utils',
         '<(src)/syzygy/core/core.gyp:core_lib',
-        'base/base.gyp:base',
-        'base/base.gyp:test_support_base',
+        '<(DEPTH)/base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/testing/gtest.gyp:gtest',
       ],
     },

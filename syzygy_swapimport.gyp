@@ -6,7 +6,7 @@
       'target_name': 'syzygy_swapimport',
       'type': 'none',
       'dependencies': [
-        '<(DEPTH)/syzygy/swapimport/swapimport.gyp:swapimport',
+        'syzygy/swapimport/swapimport.gyp:swapimport',
       ],
     },
   ],

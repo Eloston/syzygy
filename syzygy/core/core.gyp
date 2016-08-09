@@ -54,11 +54,11 @@
         'zstream.h',
       ],
       'dependencies': [
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
         '<(src)/syzygy/assm/assm.gyp:assm_lib',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/third_party/distorm/distorm.gyp:distorm',
-        'third_party/zlib/zlib.gyp:zlib',
+        '<(DEPTH)third_party/zlib/zlib.gyp:zlib',
       ],
     },
     {
@@ -70,14 +70,14 @@
       ],
       'dependencies': [
         'core_lib',
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
         '<(src)/testing/gtest.gyp:gtest',
       ],
     },
     {
       'target_name': 'core_unittests',
       'type': 'executable',
-      'includes': ['../build/masm.gypi'],
+      #'includes': ['../build/masm.gypi'],
       'sources': [
         'address_unittest.cc',
         'address_filter_unittest.cc',
@@ -98,8 +98,8 @@
       'dependencies': [
         'core_lib',
         'core_unittest_utils',
-        'base/base.gyp:base',
-        'base/base.gyp:test_support_base',
+        '<(DEPTH)/base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/syzygy/assm/assm.gyp:assm_unittest_utils',
         '<(src)/testing/gmock.gyp:gmock',
         '<(src)/testing/gtest.gyp:gtest',

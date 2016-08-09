@@ -62,7 +62,7 @@
         'typed_block_internal.h',
       ],
       'dependencies': [
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/syzygy/core/core.gyp:core_lib',
       ],
@@ -70,7 +70,7 @@
     {
       'target_name': 'block_graph_unittest_lib',
       'type': 'static_library',
-      'includes': ['../build/masm.gypi'],
+      #'includes': ['../build/masm.gypi'],
       'sources': [
         'basic_block_assembly_func.asm',
         'basic_block_test_util.cc',
@@ -80,7 +80,7 @@
       ],
       'dependencies': [
         'block_graph_lib',
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/syzygy/core/core.gyp:core_lib',
         '<(src)/testing/gtest.gyp:gtest',
@@ -111,8 +111,8 @@
       'dependencies': [
         'block_graph_lib',
         'block_graph_unittest_lib',
-        'base/base.gyp:base',
-        'base/base.gyp:test_support_base',
+        '<(DEPTH)/base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/syzygy/assm/assm.gyp:assm_unittest_utils',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/syzygy/core/core.gyp:core_lib',

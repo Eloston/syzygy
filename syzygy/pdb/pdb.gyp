@@ -58,7 +58,7 @@
         'pdb_writer.h',
       ],
       'dependencies': [
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/syzygy/msf/msf.gyp:msf_lib',
       ],
@@ -96,8 +96,8 @@
       'dependencies': [
         'pdb_lib',
         'pdb_unittest_utils',
-        'base/base.gyp:base',
-        'base/base.gyp:test_support_base',
+        '<(DEPTH)/base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_lib',
         '<(src)/syzygy/core/core.gyp:core_lib',
         '<(src)/syzygy/core/core.gyp:core_unittest_utils',

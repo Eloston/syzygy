@@ -28,7 +28,7 @@
         'swapimport_app.h',
       ],
       'dependencies': [
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
         '<(src)/syzygy/application/application.gyp:application_lib',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/syzygy/pe/pe.gyp:pe_lib',
@@ -54,8 +54,8 @@
       ],
       'dependencies': [
         'swapimport_lib',
-        'base/base.gyp:base',
-        'base/base.gyp:test_support_base',
+        '<(DEPTH)/base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/testing/gmock.gyp:gmock',
         '<(src)/testing/gtest.gyp:gtest',
         '<(src)/syzygy/core/core.gyp:core_unittest_utils',

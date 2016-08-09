@@ -28,7 +28,7 @@
         'pe_orderer.h',
       ],
       'dependencies': [
-        'base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:base',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_lib',
         '<(src)/syzygy/block_graph/orderers/block_graph_orderers.gyp:'
             'block_graph_orderers_lib',
@@ -46,8 +46,8 @@
       ],
       'dependencies': [
         'pe_orderers_lib',
-        'base/base.gyp:base',
-        'base/base.gyp:test_support_base',
+        '<(DEPTH)/base/base.gyp:base',
+        '<(DEPTH)/base/base.gyp:test_support_base',
         '<(src)/syzygy/core/core.gyp:core_unittest_utils',
         '<(src)/syzygy/pe/pe.gyp:pe_unittest_utils',
         '<(src)/syzygy/pe/pe.gyp:test_dll',
