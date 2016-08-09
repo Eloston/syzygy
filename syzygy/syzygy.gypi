@@ -27,7 +27,7 @@
     # This allows us to decouple the repository root from '<(DEPTH)', as
     # the relative depth of a pure git repository and an SVN repository
     # is different.
-    'src': 'third_party/syzygy',
+    'src': '<(PRODUCT_DIR)/../../third_party/syzygy',
 
     # Remove the base/build dependency on the existence of a chrome/VERSION
     # file.

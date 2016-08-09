@@ -71,7 +71,6 @@
 /third_party/coverage_analyzer/
 /third_party/capstone/files
 /third_party/crashpad/
-/third_party/distorm/files
 /third_party/dromaeo/files
 /third_party/icu/
 /third_party/libxml/

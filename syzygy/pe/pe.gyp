@@ -163,7 +163,6 @@
       ],
       'dependencies': [
         'dia_sdk',
-        'symsrv_dll_copy',
         'base/base.gyp:base',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_lib',
         '<(src)/syzygy/block_graph/orderers/block_graph_orderers.gyp:'
