@@ -46,36 +46,5 @@
         '<(src)/syzygy/common/common.gyp:common_lib',
       ],
     },
-    {
-      'target_name': 'msf_unittest_utils',
-      'type': 'static_library',
-      'sources': [
-        'unittest_util.cc',
-        'unittest_util.h',
-      ],
-    },
-    {
-      'target_name': 'msf_unittests',
-      'type': 'executable',
-      'sources': [
-        'msf_byte_stream_unittest.cc',
-        'msf_file_stream_unittest.cc',
-        'msf_file_unittest.cc',
-        'msf_reader_unittest.cc',
-        'msf_stream_unittest.cc',
-        'msf_writer_unittest.cc',
-        '<(src)/syzygy/testing/run_all_unittests.cc',
-      ],
-      'dependencies': [
-        'msf_lib',
-        'msf_unittest_utils',
-        '<(DEPTH)/base/base.gyp:base',
-        '<(DEPTH)/base/base.gyp:test_support_base',
-        '<(src)/syzygy/core/core.gyp:core_lib',
-        '<(src)/syzygy/core/core.gyp:core_unittest_utils',
-        #'<(src)/testing/gmock.gyp:gmock',
-        #'<(src)/testing/gtest.gyp:gtest',
-      ],
-    },
   ],
 }

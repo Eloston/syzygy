@@ -42,34 +42,5 @@
         '<(src)/syzygy/common/common.gyp:common_lib',
       ],
     },
-    {
-      'target_name': 'assm_unittest_utils',
-      'type': 'static_library',
-      'sources': [
-        'unittest_util.cc',
-        'unittest_util.h',
-      ],
-      'dependencies': [
-        '<(DEPTH)/base/base.gyp:base',
-      ],
-    },
-    {
-      'target_name': 'assm_unittests',
-      'type': 'executable',
-      'sources': [
-        'assembler_unittest.cc',
-        'buffer_serializer_unittest.cc',
-        'register_unittest.cc',
-        '<(src)/syzygy/testing/run_all_unittests.cc',
-      ],
-      'dependencies': [
-        'assm_lib',
-        'assm_unittest_utils',
-        '<(src)/syzygy/core/core.gyp:core_lib',
-        '<(DEPTH)/base/base.gyp:base',
-        '<(DEPTH)/base/base.gyp:test_support_base',
-        #'<(src)/testing/gtest.gyp:gtest',
-      ],
-    },
   ],
 }

@@ -45,23 +45,5 @@
         'swapimport_lib',
       ],
     },
-    {
-      'target_name': 'swapimport_unittests',
-      'type': 'executable',
-      'sources': [
-        'swapimport_app_unittest.cc',
-        '<(src)/syzygy/testing/run_all_unittests.cc',
-      ],
-      'dependencies': [
-        'swapimport_lib',
-        '<(DEPTH)/base/base.gyp:base',
-        '<(DEPTH)/base/base.gyp:test_support_base',
-        #'<(src)/testing/gmock.gyp:gmock',
-        #'<(src)/testing/gtest.gyp:gtest',
-        '<(src)/syzygy/core/core.gyp:core_unittest_utils',
-        '<(src)/syzygy/pe/pe.gyp:pe_unittest_utils',
-        '<(src)/syzygy/pe/pe.gyp:test_dll',
-      ],
-    },
   ],
 }

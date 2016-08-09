@@ -40,26 +40,5 @@
         '<(src)/syzygy/core/core.gyp:core_lib',
       ],
     },
-    {
-      'target_name': 'block_graph_transforms_unittests',
-      'type': 'executable',
-      'sources': [
-        'chained_basic_block_transforms_unittest.cc',
-        'fuzzing_transform_unittest.cc',
-        'iterative_transform_unittest.cc',
-        'named_transform_unittest.cc',
-        '<(src)/syzygy/testing/run_all_unittests.cc',
-      ],
-      'dependencies': [
-        'block_graph_transforms_lib',
-        '<(DEPTH)/base/base.gyp:base',
-        '<(DEPTH)/base/base.gyp:test_support_base',
-        '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_lib',
-        '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_unittest_lib',
-        '<(src)/syzygy/core/core.gyp:core_unittest_utils',
-        #'<(src)/testing/gmock.gyp:gmock',
-        #'<(src)/testing/gtest.gyp:gtest',
-      ],
-    },
   ],
 }

@@ -39,25 +39,5 @@
         '<(src)/syzygy/core/core.gyp:core_lib',
       ],
     },
-    {
-      'target_name': 'block_graph_analysis_unittests',
-      'type': 'executable',
-      'sources': [
-        'control_flow_analysis_unittest.cc',
-        'liveness_analysis_unittest.cc',
-        'memory_access_analysis_unittest.cc',
-        '<(src)/syzygy/testing/run_all_unittests.cc',
-      ],
-      'dependencies': [
-        'block_graph_analysis_lib',
-        '<(DEPTH)/base/base.gyp:base',
-        '<(DEPTH)/base/base.gyp:test_support_base',
-        '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_lib',
-        '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_unittest_lib',
-        '<(src)/syzygy/core/core.gyp:core_unittest_utils',
-        #'<(src)/testing/gmock.gyp:gmock',
-        #'<(src)/testing/gtest.gyp:gtest',
-      ],
-    },
   ],
 }

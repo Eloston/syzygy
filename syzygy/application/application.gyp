@@ -38,21 +38,5 @@
         '_USING_V110_SDK71_',
       ],
     },
-    {
-      'target_name': 'application_unittests',
-      'type': 'executable',
-      'sources': [
-        'application_unittest.cc',
-        '<(src)/syzygy/testing/run_all_unittests.cc',
-      ],
-      'dependencies': [
-        'application_lib',
-        '<(src)/syzygy/common/common.gyp:common_unittest_utils',
-        '<(DEPTH)/base/base.gyp:base',
-        '<(DEPTH)/base/base.gyp:test_support_base',
-        #'<(src)/testing/gmock.gyp:gmock',
-        #'<(src)/testing/gtest.gyp:gtest',
-      ],
-    },
   ],
 }

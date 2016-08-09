@@ -37,25 +37,5 @@
         '<(src)/syzygy/core/core.gyp:core_lib',
       ],
     },
-    {
-      'target_name': 'block_graph_orderers_unittests',
-      'type': 'executable',
-      'sources': [
-        'named_orderer_unittest.cc',
-        'original_orderer_unittest.cc',
-        'random_orderer_unittest.cc',
-        '<(src)/syzygy/testing/run_all_unittests.cc',
-      ],
-      'dependencies': [
-        'block_graph_orderers_lib',
-        '<(DEPTH)/base/base.gyp:base',
-        '<(DEPTH)/base/base.gyp:test_support_base',
-        '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_lib',
-        '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_unittest_lib',
-        '<(src)/syzygy/core/core.gyp:core_unittest_utils',
-        #'<(src)/testing/gmock.gyp:gmock',
-        #'<(src)/testing/gtest.gyp:gtest',
-      ],
-    },
   ],
 }

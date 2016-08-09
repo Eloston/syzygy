@@ -71,20 +71,5 @@
       # files that from syzygy_version that are included from compiles.
       'hard_dependency': 1,
     },
-    {
-      'target_name': 'version_unittests',
-      'type': 'executable',
-      'sources': [
-        'syzygy_version_unittest.cc',
-        '<(src)/syzygy/testing/run_all_unittests.cc',
-      ],
-      'dependencies': [
-        'version_lib',
-        '<(DEPTH)/base/base.gyp:test_support_base',
-        '<(src)/syzygy/core/core.gyp:core_lib',
-        '<(src)/syzygy/core/core.gyp:core_unittest_utils',
-        #'<(src)/testing/gtest.gyp:gtest',
-      ],
-    },
   ],
 }
