@@ -54,7 +54,7 @@
         'zstream.h',
       ],
       'dependencies': [
-        '<(src)/base/base.gyp:base',
+        'base/base.gyp:base',
         '<(src)/syzygy/assm/assm.gyp:assm_lib',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/third_party/distorm/distorm.gyp:distorm',
@@ -70,7 +70,7 @@
       ],
       'dependencies': [
         'core_lib',
-        '<(src)/base/base.gyp:base',
+        'base/base.gyp:base',
         '<(src)/testing/gtest.gyp:gtest',
       ],
     },
@@ -98,8 +98,8 @@
       'dependencies': [
         'core_lib',
         'core_unittest_utils',
-        '<(src)/base/base.gyp:base',
-        '<(src)/base/base.gyp:test_support_base',
+        'base/base.gyp:base',
+        'base/base.gyp:test_support_base',
         '<(src)/syzygy/assm/assm.gyp:assm_unittest_utils',
         '<(src)/testing/gmock.gyp:gmock',
         '<(src)/testing/gtest.gyp:gtest',

@@ -164,7 +164,7 @@
       'dependencies': [
         'dia_sdk',
         'symsrv_dll_copy',
-        '<(src)/base/base.gyp:base',
+        'base/base.gyp:base',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_lib',
         '<(src)/syzygy/block_graph/orderers/block_graph_orderers.gyp:'
             'block_graph_orderers_lib',
@@ -217,7 +217,7 @@
       ],
       'dependencies': [
         'pe_lib',
-        '<(src)/base/base.gyp:base',
+        'base/base.gyp:base',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/syzygy/common/common.gyp:common_unittest_utils',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_unittest_lib',
@@ -274,8 +274,8 @@
         'pe_unittest_utils',
         'test_dll',
         'test_dll_obj',
-        '<(src)/base/base.gyp:base',
-        '<(src)/base/base.gyp:test_support_base',
+        'base/base.gyp:base',
+        'base/base.gyp:test_support_base',
         '<(src)/syzygy/ar/ar.gyp:ar_unittest_utils',
         '<(src)/syzygy/assm/assm.gyp:assm_unittest_utils',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_unittest_lib',
@@ -541,7 +541,7 @@
       'dependencies': [
         'pe_app_lib',
         'pe_lib',
-        '<(src)/base/base.gyp:base',
+        'base/base.gyp:base',
       ],
       'run_as': {
         'working_directory': '$(ConfigurationDir)',
@@ -562,7 +562,7 @@
       'dependencies': [
         'pe_app_lib',
         'pe_lib',
-        '<(src)/base/base.gyp:base',
+        'base/base.gyp:base',
       ],
       'run_as': {
         'working_directory': '$(ConfigurationDir)',

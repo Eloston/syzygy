@@ -42,7 +42,7 @@
         'msf_writer_impl.h',
       ],
       'dependencies': [
-        '<(src)/base/base.gyp:base',
+        'base/base.gyp:base',
         '<(src)/syzygy/common/common.gyp:common_lib',
       ],
     },
@@ -69,8 +69,8 @@
       'dependencies': [
         'msf_lib',
         'msf_unittest_utils',
-        '<(src)/base/base.gyp:base',
-        '<(src)/base/base.gyp:test_support_base',
+        'base/base.gyp:base',
+        'base/base.gyp:test_support_base',
         '<(src)/syzygy/core/core.gyp:core_lib',
         '<(src)/syzygy/core/core.gyp:core_unittest_utils',
         '<(src)/testing/gmock.gyp:gmock',

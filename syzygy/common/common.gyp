@@ -68,7 +68,7 @@
         'unittest_util.h',
       ],
       'dependencies': [
-        '<(src)/base/base.gyp:base',
+        'base/base.gyp:base',
         '<(src)/testing/gtest.gyp:gtest',
         '<(src)/syzygy/core/core.gyp:core_unittest_utils',
       ],
@@ -93,8 +93,8 @@
       'dependencies': [
         'common_lib',
         'common_unittest_utils',
-        '<(src)/base/base.gyp:base',
-        '<(src)/base/base.gyp:test_support_base',
+        'base/base.gyp:base',
+        'base/base.gyp:test_support_base',
         '<(src)/testing/gmock.gyp:gmock',
         '<(src)/testing/gtest.gyp:gtest',
       ],

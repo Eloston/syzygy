@@ -32,7 +32,7 @@
         'named_transform.h',
       ],
       'dependencies': [
-        '<(src)/base/base.gyp:base',
+        'base/base.gyp:base',
         '<(src)/syzygy/block_graph/analysis/block_graph_analysis.gyp:'
             'block_graph_analysis_lib',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_lib',
@@ -52,8 +52,8 @@
       ],
       'dependencies': [
         'block_graph_transforms_lib',
-        '<(src)/base/base.gyp:base',
-        '<(src)/base/base.gyp:test_support_base',
+        'base/base.gyp:base',
+        'base/base.gyp:test_support_base',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_lib',
         '<(src)/syzygy/block_graph/block_graph.gyp:block_graph_unittest_lib',
         '<(src)/syzygy/core/core.gyp:core_unittest_utils',
