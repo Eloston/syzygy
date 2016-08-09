@@ -58,7 +58,7 @@
         '<(src)/syzygy/assm/assm.gyp:assm_lib',
         '<(src)/syzygy/common/common.gyp:common_lib',
         '<(src)/third_party/distorm/distorm.gyp:distorm',
-        '<(src)/third_party/zlib/zlib.gyp:zlib',
+        'third_party/zlib/zlib.gyp:zlib',
       ],
     },
     {
