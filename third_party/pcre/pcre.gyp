@@ -26,9 +26,6 @@
       'sources': [
         'files/dftables.c',
       ],
-      'outputs': [
-        '<(output_dir)/dftables_exe.exe',
-      ],
       'msvs_settings': {
         'VCCLCompilerTool': {
           'AdditionalOptions': ['/wd4018', '/wd4996'],

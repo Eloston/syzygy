@@ -34,6 +34,7 @@
     #'test_isolation_mode': 'noop',
 
     'output_dir': '<(src)/binaries/exe',
+    'msvs_output_dir': '..\\third_party\\syzygy\\binaries\\exe',
 
     'intermediate_dir': '<(src)/binaries/intermediate',
 
@@ -52,10 +53,8 @@
   'target_defaults': {
     'include_dirs': [
       '<(src)',
+      '<(DEPTH)',
     ],
-    'msvs_configuration_attributes': {
-      'OutputDirectory': '<(output_dir)',
-    },
     'msvs_settings': {
       'VCCLCompilerTool': {
         # See http://msdn.microsoft.com/en-us/library/aa652260(v=vs.71).aspx
@@ -76,11 +75,12 @@
         # Default to using more sane PDB filenames. Otherwise, both foo.exe and
         # foo.dll will generate foo.pdb. This ensures that instead we see
         # foo.exe.pdb and foo.dll.pdb.
-        'ProgramDatabaseFile': '$(TargetPath).pdb',
+        'ProgramDatabaseFile': '..\\..\\third_party\\syzygy\\binaries\\exe\\$(TargetFileName).pdb',
         # common.gypi overrides VCLinkerTool::LargeAddressAware via an
         # addition option. We unset this so that we can control our own
         # settings.
         'AdditionalOptions!': [ '/largeaddressaware' ],
+        'OutputFile': '..\\..\\third_party\\syzygy\\binaries\\exe\\$(TargetFileName)',
       },
     },
     'configurations': {
@@ -93,7 +93,7 @@
         'defines': [
           # This global define is in addition to _DEBUG.
           '_COVERAGE_BUILD',
-          'BUILD_OUTPUT_DIR="<(output_dir)"',
+          'BUILD_OUTPUT_DIR="<(msvs_output_dir)"',
           # Turn off iterator debugging for coverage, as it slows down
           # all iterator-related operations without improving coverage.
           '_HAS_ITERATOR_DEBUGGING=0',
@@ -115,7 +115,7 @@
       },
       'Release': {
         'defines': [
-          'BUILD_OUTPUT_DIR="<(output_dir)"',
+          'BUILD_OUTPUT_DIR="<(msvs_output_dir)"',
         ],
         'conditions': [
           # We up the level of optimizations for official builds.
@@ -156,12 +156,12 @@
       },
       'Debug': {
         'defines': [
-          'BUILD_OUTPUT_DIR="<(output_dir)"',
+          'BUILD_OUTPUT_DIR="<(msvs_output_dir)"',
          ],
       },
       'Debug_x64': {
         'defines': [
-          'BUILD_OUTPUT_DIR="<(output_dir)"',
+          'BUILD_OUTPUT_DIR="<(msvs_output_dir)"',
          ],
       },
       'Release_x64': {
