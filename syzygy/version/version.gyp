@@ -25,7 +25,6 @@
       'type': 'none',
       'msvs_cygwin_shell': 0,
       'sources': [
-        'syzygy_version.h',
         'version.gen.template',
       ],
       'actions': [
