@@ -1,0 +1,26 @@
+import("../syzygy.gni")
+
+source_set("swapimport_lib") {
+    sources = [
+        "swapimport_app.cc",
+        "swapimport_app.h",
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/application:application_lib",
+        "$src/syzygy/common:common_lib",
+        "$src/syzygy/pe:pe_lib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}
+
+executable("swapimport") {
+    sources = [
+        "swapimport_main.cc",
+        "swapimport.rc",
+    ]
+    deps = [
+        ":swapimport_lib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

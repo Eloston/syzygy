@@ -1,0 +1,47 @@
+import("../syzygy.gni")
+
+config("syzygy_version_config") {
+    include_dirs = [
+        "$intermediate_dir",
+    ]
+}
+
+action("make_version_gen") {
+    script = "$src/syzygy/build/template_replace.py"
+    inputs = [
+        "$src/syzygy/SYZYGY_VERSION",
+        "$src/syzygy/build/LASTCHANGE.gen",
+        "version.gen.template",
+    ]
+    outputs = [
+        "$intermediate_dir/syzygy/version/version.gen",
+    ]
+    args = [
+        "--input", "version.gen.template",
+        "--output", "$intermediate_dir/syzygy/version/version.gen",
+        "$src/syzygy/SYZYGY_VERSION",
+        "$src/syzygy/build/LASTCHANGE.gen",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}
+
+group("syzygy_version") {
+    data_deps = [
+        ":make_version_gen",
+    ]
+    public_configs = [
+        ":syzygy_version_config",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}
+
+source_set("version_lib") {
+    sources = [
+        "syzygy_version.cc",
+        "syzygy_version.h",
+    ]
+    deps = [
+        ":syzygy_version",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

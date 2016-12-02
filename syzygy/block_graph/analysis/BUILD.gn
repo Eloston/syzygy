@@ -1,0 +1,20 @@
+import("../../syzygy.gni")
+
+source_set("block_graph_analysis_lib") {
+    sources = [
+        "control_flow_analysis.cc",
+        "control_flow_analysis.h",
+        "liveness_analysis.cc",
+        "liveness_analysis.h",
+        "liveness_analysis_internal.h",
+        "memory_access_analysis.cc",
+        "memory_access_analysis.h",
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/block_graph:block_graph_lib",
+        "$src/syzygy/common:common_lib",
+        "$src/syzygy/core:core_lib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

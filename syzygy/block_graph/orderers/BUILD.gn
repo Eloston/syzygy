@@ -1,0 +1,18 @@
+import("../../syzygy.gni")
+
+source_set("block_graph_orderers_lib") {
+    sources = [
+        "named_orderer.h",
+        "original_orderer.cc",
+        "original_orderer.h",
+        "random_orderer.cc",
+        "random_orderer.h",
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/block_graph:block_graph_lib",
+        "$src/syzygy/common:common_lib",
+        "$src/syzygy/core:core_lib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

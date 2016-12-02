@@ -1,0 +1,16 @@
+src = "//third_party/syzygy"
+output_dir = "$src/binaries/exe"
+intermediate_dir = "$src/binaries/intermediate"
+
+config("default_syzygy_config") {
+    include_dirs = [
+        "$src",
+        "//",
+    ]
+    cflags = [
+        "/wd4201",
+    ]
+    ldflags = [
+        "/largeaddressaware",
+    ]
+}

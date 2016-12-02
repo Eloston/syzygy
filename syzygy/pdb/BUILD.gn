@@ -1,0 +1,44 @@
+import("../syzygy.gni")
+
+source_set("pdb_lib") {
+    sources = [
+        "gen/pdb_type_info_records.cc",
+        "gen/pdb_type_info_records.h",
+        "mutators/add_named_stream_mutator.h",
+        "mutators/named_mutator.h",
+        "omap.cc",
+        "omap.h",
+        "pdb_byte_stream.h",
+        "pdb_constants.cc",
+        "pdb_constants.h",
+        "pdb_data.cc",
+        "pdb_data.h",
+        "pdb_data_types.h",
+        "pdb_dbi_stream.cc",
+        "pdb_dbi_stream.h",
+        "pdb_decl.h",
+        "pdb_file.h",
+        "pdb_file_stream.h",
+        "pdb_mutator.cc",
+        "pdb_mutator.h",
+        "pdb_reader.h",
+        "pdb_stream.h",
+        "pdb_stream_reader.cc",
+        "pdb_stream_reader.h",
+        "pdb_stream_record.cc",
+        "pdb_stream_record.h",
+        "pdb_symbol_record.cc",
+        "pdb_symbol_record.h",
+        "pdb_type_info_stream_enum.cc",
+        "pdb_type_info_stream_enum.h",
+        "pdb_util.cc",
+        "pdb_util.h",
+        "pdb_writer.h",
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/common:common_lib",
+        "$src/syzygy/msf:msf_lib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

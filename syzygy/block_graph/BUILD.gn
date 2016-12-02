@@ -1,0 +1,48 @@
+import("../syzygy.gni")
+
+source_set("block_graph_lib") {
+    sources = [
+        "basic_block.cc",
+        "basic_block.h",
+        "basic_block_assembler.cc",
+        "basic_block_assembler.h",
+        "basic_block_decomposer.cc",
+        "basic_block_decomposer.h",
+        "basic_block_subgraph.cc",
+        "basic_block_subgraph.h",
+        "block_builder.cc",
+        "block_builder.h",
+        "block_graph.cc",
+        "block_graph.h",
+        "block_graph_serializer.cc",
+        "block_graph_serializer.h",
+        "block_hash.cc",
+        "block_hash.h",
+        "block_util.cc",
+        "block_util.h",
+        "filter_util.cc",
+        "filter_util.h",
+        "filterable.cc",
+        "filterable.h",
+        "hot_patching_metadata.h",
+        "iterate.cc",
+        "iterate.h",
+        "ordered_block_graph.cc",
+        "ordered_block_graph.h",
+        "ordered_block_graph_internal.h",
+        "orderer.cc",
+        "orderer.h",
+        "tags.h",
+        "transform.cc",
+        "transform.h",
+        "transform_policy.h",
+        "typed_block.h",
+        "typed_block_internal.h",
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/common:common_lib",
+        "$src/syzygy/core:core_lib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

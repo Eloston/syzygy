@@ -1,0 +1,104 @@
+# Minimal config for swapimport
+
+import("../../syzygy/syzygy.gni")
+
+config("pcre_tmpl") {
+    include_dirs = [
+        "files",
+    ]
+    defines = [
+        "LINK_SIZE=2",
+        "PCRE_STATIC",
+        "HAVE_CONFIG_H",
+        "_CRT_SECURE_NO_WARNINGS",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}
+
+executable("dftables_exe") {
+    sources = [
+        "files/dftables.c",
+    ]
+    cflags = [
+        "/wd4018",
+        "/wd4996",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}
+
+action("make_tables") {
+    deps = [
+        ":dftables_exe",
+    ]
+
+    script = "../../run_exe.py"
+    inputs = [
+        "$output_dir/dftables_exe.exe",
+    ]
+    outputs = [
+        "$intermediate_dir/pcre_chartables.c",
+    ]
+    args = [ "$output_dir/dftables_exe.exe", "$intermediate_dir/pcre_chartables.c" ]
+    configs += [ ":default_syzygy_config" ]
+}
+
+config("pcre_lib_config") {
+    defines = [
+        "LINK_SIZE=2",
+        "PCRE_STATIC",
+    ]
+    include_dirs = [
+        "files",
+    ]
+}
+
+source_set("pcre_lib") {
+    deps = [
+        "make_tables",
+    ]
+    sources = [
+        # C sources
+        "files/pcre_compile.c",
+        "files/pcre_config.c",
+        "files/pcre_dfa_exec.c",
+        "files/pcre_exec.c",
+        "files/pcre_fullinfo.c",
+        "files/pcre_get.c",
+        "files/pcre_globals.c",
+        "files/pcre_info.c",
+        "files/pcre_internal.h",
+        "files/pcre_maketables.c",
+        "files/pcre_newline.c",
+        "files/pcre_ord2utf8.c",
+        "files/pcre_refcount.c",
+        "files/pcre_scanner.h",
+        "files/pcre_study.c",
+        "files/pcre_tables.c",
+        "files/pcre_try_flipped.c",
+        "files/pcre_ucd.c",
+        "files/pcre_valid_utf8.c",
+        "files/pcre_version.c",
+        "files/pcre_xclass.c",
+        "files/pcrecpp.h",
+        "files/pcrecpp_internal.h",
+        "files/pcreposix.c",
+        "files/pcreposix.h",
+        "files/ucp.h",
+        "<(intermediate_dir)/pcre_chartables.c",
+        # C plusplus sources
+        "files/pcrecpp.cc",
+        "files/pcre_scanner.cc",
+        "files/pcre_stringpiece.cc",
+    ]
+    cflags = [
+        "/wd4267",
+        "/wd4130",
+        "/wd4018",
+        "/wd4189",
+        "/wd4996",
+    ]
+    public_configs = [
+        ":pcre_lib_config",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

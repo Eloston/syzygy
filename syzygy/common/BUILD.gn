@@ -1,0 +1,41 @@
+import("../syzygy.gni")
+
+source_set("common_lib") {
+    sources = [
+        "align.cc",
+        "align.h",
+        "align_impl.h",
+        "asan_parameters.cc",
+        "asan_parameters.h",
+        "assertions.h",
+        "binary_stream.cc",
+        "binary_stream.h",
+        "buffer_parser.cc",
+        "buffer_parser.h",
+        "buffer_parser_impl.h",
+        "buffer_writer.cc",
+        "buffer_writer.h",
+        "com_utils.cc",
+        "com_utils.h",
+        "comparable.h",
+        "dbghelp_util.cc",
+        "dbghelp_util.h",
+        "defs.cc",
+        "defs.h",
+        "indexed_frequency_data.cc",
+        "indexed_frequency_data.h",
+        "logging.cc",
+        "logging.h",
+        "path_util.cc",
+        "path_util.h",
+        "process_utils.cc",
+        "process_utils.h",
+        "recursive_lock.cc",
+        "recursive_lock.h",
+    ]
+    defines = [
+        # This is required for ATL to use XP-safe versions of its functions.
+        "_USING_V110_SDK71_",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

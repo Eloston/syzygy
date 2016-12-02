@@ -1,0 +1,9 @@
+# This is a dependency for Chromium's GN configuration to build swapimport.exe for use in import reordering
+
+assert(is_win, "Swapimport can only be built on Windows")
+
+group("syzygy_swapimport") {
+    deps = [
+        "syzygy/swapimport:swapimport",
+    ]
+}

@@ -1,0 +1,19 @@
+import("../syzygy.gni")
+
+source_set("application_lib") {
+    sources = [
+        "application.cc"
+        "application.h",
+        "application_impl.h"
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/common:common_lib",
+        "$src/syzygy/version:version_lib",
+    ]
+    defines = [
+        # This is required for ATL to use XP-safe versions of its functions.
+        "_USING_V110_SDK71_"
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

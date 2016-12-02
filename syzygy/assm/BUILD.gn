@@ -1,0 +1,23 @@
+import("../syzygy.gni")
+
+source_set("assm_lib") {
+    sources = [
+        "assembler_base.h",
+        "assembler_base_impl.h",
+        "assembler.h",
+        "buffer_serializer.h",
+        "cond.h",
+        "const.h",
+        "label_base.h",
+        "operand_base.h",
+        "register_internal.h",
+        "register.cc",
+        "register.h",
+        "value_base.h",
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/common:common_lib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

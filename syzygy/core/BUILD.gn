@@ -1,0 +1,42 @@
+import("../syzygy.gni")
+
+source_set("core_lib") {
+    sources = [
+        "address.cc",
+        "address.h",
+        "address_filter.h",
+        "address_filter_impl.h",
+        "address_range.cc",
+        "address_range.h",
+        "address_space.cc",
+        "address_space.h",
+        "address_space_internal.h",
+        "disassembler.cc",
+        "disassembler.h",
+        "disassembler_util.cc",
+        "disassembler_util.h",
+        "file_util.cc",
+        "file_util.h",
+        "json_file_writer.cc",
+        "json_file_writer.h",
+        "random_number_generator.cc",
+        "random_number_generator.h",
+        "section_offset_address.cc",
+        "section_offset_address.h",
+        "serialization.cc",
+        "serialization.h",
+        "serialization_impl.h",
+        "string_table.cc",
+        "string_table.h",
+        "zstream.cc",
+        "zstream.h",
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/assm:assm_lib",
+        "$src/syzygy/common:common_lib",
+        "$src/third_party/distorm:distorm",
+        "//third_party/zlib:zlib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

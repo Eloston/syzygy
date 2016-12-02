@@ -1,0 +1,27 @@
+import("../syzygy.gni")
+
+source_set("msf_lib") {
+    sources = [
+        "msf_byte_stream.h",
+        "msf_byte_stream_impl.h",
+        "msf_constants.cc",
+        "msf_constants.h",
+        "msf_data.h",
+        "msf_decl.h",
+        "msf_file.h",
+        "msf_file_impl.h",
+        "msf_file_stream.h",
+        "msf_file_stream_impl.h",
+        "msf_reader.h",
+        "msf_reader_impl.h",
+        "msf_stream.h",
+        "msf_stream_impl.h",
+        "msf_writer.h",
+        "msf_writer_impl.h",
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/common:common_lib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}

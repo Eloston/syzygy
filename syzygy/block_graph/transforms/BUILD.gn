@@ -1,0 +1,20 @@
+import("../../syzygy.gni")
+
+source_set("block_graph_transforms_lib") {
+    sources = [
+        "chained_basic_block_transforms.cc",
+        "chained_basic_block_transforms.h",
+        "fuzzing_transform.cc",
+        "fuzzing_transform.h",
+        "iterative_transform.h",
+        "named_transform.h",
+    ]
+    deps = [
+        "//base:base",
+        "$src/syzygy/block_graph/analysis:block_graph_analysis_lib",
+        "$src/syzygy/block_graph:block_graph_lib",
+        "$src/syzygy/common:common_lib",
+        "$src/syzygy/core:core_lib",
+    ]
+    configs += [ ":default_syzygy_config" ]
+}
